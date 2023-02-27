@@ -5,7 +5,9 @@
 //  Created by Magdiel Altynbekov on 10/2/23.
 //
 
+
 import UIKit
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        let firstView = AuthController()
+//        let tabVC = UITabBarController
+        let window = UIWindow(frame: UIScreen.main.bounds)
+            window.rootViewController = firstView
+//        window.rootViewController = tabVC
+            window.makeKeyAndVisible()
         return true
     }
 
